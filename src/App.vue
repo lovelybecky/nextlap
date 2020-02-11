@@ -1,28 +1,51 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <app-header></app-header>
+	<router-view></router-view>
+	<app-tail></app-tail>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import header from './components/header.vue'
+import tail from './components/tail.vue'
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    'app-header':header,
+	'app-tail':tail
+  },
+  created(){
+    this.$router.push('/about')
   }
 }
 </script>
 
 <style>
+@font-face {
+	font-family:'Lato-Regular';
+	src: url('./font/Lato-Regular.ttf');
+}
+@font-face {
+	font-family:'Lato-Bold';
+	src: url('./font/Lato-Bold.ttf');
+}
+@font-face {
+	font-family:'JosefinSans-Bold';
+	src: url('./font/JosefinSans-Bold.ttf');
+}
+@font-face {
+	font-family:'Ubuntu-R';
+	src: url('./font/Ubuntu-R.ttf');
+}
+@font-face {
+	font-family:'Ubuntu-B';
+	src: url('./font/Ubuntu-B.ttf');
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+   font-family: Lato-Regular;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
 }
 </style>
